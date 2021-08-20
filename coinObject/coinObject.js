@@ -27,13 +27,13 @@ const coin = {
 }
 
 const tela = document.getElementById('result');
-function display20Flips() {
 
-    // Use um loop para arremessar a moeda 20 vezes.
+// ================ Flip texto
+
+function display20Flips() {
     const results = [];
     tela.innerHTML = ""
     
-    // Depois que o seu loop terminar, exiba o resultado na página no formato de TEXTO.
     const paragrafo = document.createElement('p')
     for(let x = 0; x < 20; x++){
 
@@ -53,28 +53,25 @@ function display20Flips() {
     return results
 
 }
+
+// ================ Flip imagens
   
 function display20Images() {
-    // Use um loop para arremessar a moeda 20 vezes.
     const results = [];
     tela.innerHTML = ""
     
-    // Depois que o seu loop terminar, exiba o resultado na página no formato de IMAGEM.
     const paragrafo = document.createElement('p')
     for(let x = 0; x < 20; x++){
-        
         coin.flip()
         results.push(coin.toString())
-
         paragrafo.appendChild(coin.toHTML())
     }
+
     tela.appendChild(paragrafo)
-    // Além de exibir os resultados na página, não esqueça
-    // de retornar o valor de "results".
-    // Caso esqueça de retornar "results", sua função não
-    // irá passar nos testes.
     return results
 }
+
+// ================ botões
 
 const container = document.getElementById('container')
 container.addEventListener("click", (e) => {
@@ -87,5 +84,3 @@ container.addEventListener("click", (e) => {
     }
     
 })
-
-console.warn('Os botões não retornam o "results" no console, é necessario chamar as funções direto no console > display20Flips() ou display20Images()')
