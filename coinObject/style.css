@@ -1,0 +1,71 @@
+body, div, h1, p, button{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(img/background.png);
+}
+
+.container{
+    margin: 0 auto;
+    width: 600px;
+    background-color: rgba(0, 0, 0, 0.781);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: -2px -2px 7px 4px rgba(0, 0, 0, 0.822) inset,
+                2px 2px 7px 0px rgba(223, 223, 223, 0.555) inset,
+                0px 0px 7px 4px rgba(0, 0, 0, 0.822);
+}
+
+.result{
+    width: 90%;
+    border: 1px solid rgb(112, 112, 112);
+    border-radius: 5px;
+    margin: 30px;
+    box-shadow: 0px 0px 20px #000 inset;
+    padding: 5px;
+}
+
+/* ===== Moeda em Texto ====*/
+.result p{
+
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    text-shadow: 2px 2px 3px #000;
+
+}
+
+.moeda-texto{
+    color: #fff;
+    padding: 15px;
+    width: 40%;
+    border: 1px solid rgba(255, 255, 255, 0.178);
+}
+
+/* ==== Moeda em Imagem ====*/
+
+.moeda-imagem{
+    width: 100px;
+    height: 100px;
+}
+
+
+
+/* ======== Botões =========*/
+.botao-jogar{
+
+    border: none;
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+    margin: 0px 5px 20px;
+    border-radius: 4px;
+}
+
+
+
