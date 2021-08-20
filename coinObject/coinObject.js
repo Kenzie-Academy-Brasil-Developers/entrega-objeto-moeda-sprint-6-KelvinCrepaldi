@@ -12,9 +12,9 @@ const coin = {
         return "Tails"
     },
 
-    toHTML: function(number){
+    toHTML: function(){
         const image = document.createElement("img");
-        if(number === 0){
+        if(this.state === 0){
             image.src = "coinObject/img/cara.png"
         }else{
             image.src = "coinObject/img/coroa.png"
@@ -26,62 +26,47 @@ const coin = {
 
 }
 
-function retorna20Moedas(){
-    let array = []
-    for(let i = 0; i < 20; i++){
-        coin.flip()
-        array.push(coin.state)
-    }
-    return array
-}
-
 const tela = document.getElementById('result');
 function display20Flips() {
 
     // Use um loop para arremessar a moeda 20 vezes.
-    const results = retorna20Moedas();
+    const results = [];
     tela.innerHTML = ""
     
     // Depois que o seu loop terminar, exiba o resultado na página no formato de TEXTO.
     const paragrafo = document.createElement('p')
-    for(let x = 0; x < results.length; x++){
+    for(let x = 0; x < 20; x++){
+
         let texto = ''
-        if(results[x] === 0){
-            texto = `moeda ${x+1} : Heads`
-        }else{
-            texto = `moeda ${x+1} : Tails`
-        }
-        
+        coin.flip()
+        results.push(coin.toString())
+        texto = `Moeda ${x+1}: ${coin.toString()}`
+
         let moeda = document.createElement('span')
         moeda.innerText = texto
         moeda.classList.add('moeda-texto')
         paragrafo.appendChild(moeda)
+
     }
     tela.appendChild(paragrafo)
 
-    // Além de exibir os resultados na página, não esqueça
-    // de retornar o valor de "results".
-    // Caso esqueça de retornar "results", sua função não
-    // irá passar nos testes.
     return results
 
 }
   
 function display20Images() {
     // Use um loop para arremessar a moeda 20 vezes.
-    const results = retorna20Moedas();
+    const results = [];
     tela.innerHTML = ""
     
     // Depois que o seu loop terminar, exiba o resultado na página no formato de IMAGEM.
     const paragrafo = document.createElement('p')
-    for(let x = 0; x < results.length; x++){
-        let texto = ''
-        if(results[x] === 0){
-            imagem = coin.toHTML(results[x])
-        }else{
-            imagem = coin.toHTML(results[x])
-        }
-        paragrafo.appendChild(imagem)
+    for(let x = 0; x < 20; x++){
+        
+        coin.flip()
+        results.push(coin.toString())
+
+        paragrafo.appendChild(coin.toHTML())
     }
     tela.appendChild(paragrafo)
     // Além de exibir os resultados na página, não esqueça
